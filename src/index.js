@@ -168,19 +168,19 @@ const displayData = (relevantInfo) => {
 
   document.getElementById(
     "description"
-  ).innerHTML = `${relevantInfo.description}`;
+  ).innerHTML = `<span>${relevantInfo.description}</span>`;
 
   document.getElementById(
     "lowAndHigh"
-  ).innerHTML = `Low of ${relevantInfo.tempMin}&#186C, high of ${relevantInfo.tempMax}&#186C`;
+  ).innerHTML = `Low of <span>${relevantInfo.tempMin}&#186C</span>, high of <span>${relevantInfo.tempMax}&#186C</span>`;
 
   document.getElementById(
     "humidity"
-  ).innerHTML = `${relevantInfo.humidity}% humidity`;
+  ).innerHTML = `<span>${relevantInfo.humidity}%</span> humidity`;
 
   document.getElementById(
     "windSpeed"
-  ).innerHTML = `${relevantInfo.windSpeed}km/hr wind speed`;
+  ).innerHTML = `<span>${relevantInfo.windSpeed}km/hr</span> wind speed`;
 };
 
 buildHomepage().then(function () {

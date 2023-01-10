@@ -101,7 +101,10 @@ ul {
 li {
   font-size: 2rem;
   color: #f06543;
-  font-weight: 500;
   margin-bottom: 1rem;
   line-height: 2rem;
+}
+
+span {
+  font-weight: 500;
 }
