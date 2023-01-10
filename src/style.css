@@ -1,0 +1,46 @@
+body {
+  padding: 5%;
+}
+
+#content {
+  display: flex;
+  gap: 10%;
+  margin: auto;
+  justify-content: space-between;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#mainContent {
+  flex-grow: 1;
+}
+
+#temp {
+  font-size: 6rem;
+  color: #f06543;
+  font-weight: 500;
+}
+
+input {
+  background-color: #f06543;
+  border: none;
+  border-radius: 0.5rem;
+  height: 2rem;
+  width: 80%;
+}
+
+#secondaryContent {
+  flex-grow: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
