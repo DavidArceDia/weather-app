@@ -1,9 +1,11 @@
 body {
   padding: 5%;
+  background-image: "dist/images/backgroundImage.jpg";
 }
 
 #content {
   display: flex;
+  flex-wrap: wrap;
   gap: 10%;
   margin: auto;
   justify-content: space-between;
@@ -13,6 +15,7 @@ body {
 
 #mainContent {
   flex-grow: 1;
+  margin-bottom: 5rem;
 }
 
 #temp {
@@ -21,12 +24,43 @@ body {
   font-weight: 500;
 }
 
+label {
+  margin-left: 0.5rem;
+  opacity: 0;
+}
+
+label.active {
+  opacity: 1;
+  transition: 1.55s;
+}
+
 input {
   background-color: #f06543;
   border: none;
   border-radius: 0.5rem;
   height: 2rem;
   width: 80%;
+  max-width: 20rem;
+  padding: 0 0.5rem;
+
+  color: white;
+  margin-top: 0.1rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+  background-color: transparent !important;
+}
+
+input::placeholder {
+  color: white;
+}
+
+input:focus {
+  outline: none;
 }
 
 #secondaryContent {
@@ -43,4 +77,12 @@ form {
 ul {
   list-style: none;
   padding: 0;
+}
+
+li {
+  font-size: 2rem;
+  color: #f06543;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  line-height: 2rem;
 }

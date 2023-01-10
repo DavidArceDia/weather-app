@@ -35,14 +35,15 @@ async function getWeather(coordinatesData) {
 const getRelevantInfo = (weatherData) => {
   const feelsLike = weatherData.main.feels_like;
   const humidity = weatherData.main.humidity;
-  const tempMax = weatherData.main.temp_max;
+  const tempMax = weatherData.main.temp_max.toFixed(1);
   const temp = weatherData.main.temp;
-  const tempMin = weatherData.main.temp_min;
+  const tempMin = weatherData.main.temp_min.toFixed(1);
 
   const descriptionTitle = weatherData.weather[0].main;
-  const description = weatherData.weather[0].description;
+  let des = weatherData.weather[0].description;
+  const description = des.charAt(0).toUpperCase() + des.slice(1);
 
-  const windSpeed = weatherData.wind.speed;
+  const windSpeed = weatherData.wind.speed.toFixed(1);
 
   const relevantInfo = {
     feelsLike,
@@ -86,6 +87,11 @@ async function buildHomepage() {
   input.setAttribute("type", "text");
   input.setAttribute("name", "location");
   input.setAttribute("id", "location");
+  input.setAttribute("placeholder", "City, State, Country");
+  input.addEventListener("input", () => {
+    label.classList.add("active");
+    input.setAttribute("placeholder", "");
+  });
 
   const temp = document.createElement("h");
   temp.setAttribute("id", "temp");
@@ -167,7 +173,7 @@ const displayData = (relevantInfo) => {
 
   document.getElementById(
     "lowAndHigh"
-  ).innerHTML = `${relevantInfo.tempMin} low, ${relevantInfo.tempMax} high`;
+  ).innerHTML = `Low of ${relevantInfo.tempMin}&#186C, high of ${relevantInfo.tempMax}&#186C`;
 
   document.getElementById(
     "humidity"
