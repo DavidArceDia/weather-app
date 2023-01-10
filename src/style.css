@@ -1,6 +1,6 @@
 body {
   padding: 5%;
-  background-image: "dist/images/backgroundImage.jpg";
+  background-image: "src/images/backgroundImage.jpg";
 }
 
 #content {
