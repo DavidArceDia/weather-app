@@ -6,7 +6,7 @@ async function getCoordinates(
   country = "canada"
 ) {
   const response = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${city},${state},${country}&limit=1&appid=66a674d8f9600a051999c1eecd78a9de`,
+    `https://api.openweathermap.org/geo/1.0/direct?q=${city},${state},${country}&limit=1&appid=66a674d8f9600a051999c1eecd78a9de`,
     {
       mode: "cors",
     }
