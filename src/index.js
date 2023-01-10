@@ -154,7 +154,6 @@ const addSeachFeature = () => {
       getWeather(coordinatesData)
         .then(function (weatherData) {
           const relevantInfo = getRelevantInfo(weatherData);
-          console.log(relevantInfo);
           return relevantInfo;
         })
         .then(function (relevantInfo) {
@@ -193,8 +192,7 @@ buildHomepage().then(function () {
       })
       .then(function (relevantInfo) {
         displayData(relevantInfo);
-      })
-      .catch(console.log("fart"));
+      });
   });
 });
 
